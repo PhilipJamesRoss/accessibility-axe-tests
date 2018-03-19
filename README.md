@@ -1,22 +1,26 @@
-# Team Planning Tool - Accessibility tests
+# aXe-core - Accessibility tests
 
-This repository contains a `Dockerfile` which will run the automated axe-core accessibility tests in a docker container against an instance of `edwfp`, ideally the `edwfp-full-stack`.
+This project is an example of the set up to run automated accessibility test with aXe-core.
 
-## TODO Add stage to run `edwfp-full-stack` in CI pipeline
-
-The main goal of this repo is to provide the ability to run the containerised tests in the CI pipeline for the `edwfp` services. Once they run successfully the image for the said services will be pushed up to Gitlab's container registry.
+The project contains an example spec that you can simply update the URL and page attributes to get started.
 
 # Getting started
+The tests are currently configured to run against the Gov.uk homepage.
+`git clone` this project and update the `demo1.spec.js` file to point towards your aplication.
+To run the tests in the terminal run `npm run test:axe`
 
-To get the axe test container running on your local machine:
-Clone the [edwfp-full-stack](https://gitlab.itsshared.net/employee-deal/edwfp-full-stack) repo and follow the README to get that running.
-Then in a separate terminal window clone this repo and run:
+# Running tests in Docker
+
+Ensure you have cloned this project and in a separate terminal window run:
 ```
-docker build -f Dockerfile -t tptaxe .
+docker build -f Dockerfile -t test:axe .
 ```
 Followed by
 ```
-docker run --network="host" tptaxe
+docker run --network="host" test:axe
 ```
-The above command will only work if you are running against `https://localhost`
 The tests will by default run in `headless Chrome`.
+
+This repository contains a `Dockerfile` which will run the automated axe-core accessibility tests in a docker container against an example URL which is set to `https://www.gov.uk/`.
+
+There are lines commented out in the `.gitlab-ci.yml` file which provide the capability to push the service to Gitlab's container registry once the tests run successfully.
