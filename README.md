@@ -6,7 +6,8 @@ The project contains an example spec that you can simply update the URL and page
 
 # Getting started
 The tests are currently configured to run against the Gov.uk homepage.
-`git clone` this project and update the `demo1.spec.js` file to point towards your aplication.
+`git clone` this project and then run `npm install`.
+Update the `demo1.spec.js` file to point towards your application.
 To run the tests in the terminal run `npm run test:axe`
 
 # Running tests in Docker
