@@ -23,5 +23,3 @@ docker run --network="host" test:axe
 The tests will by default run in `headless Chrome`.
 
 This repository contains a `Dockerfile` which will run the automated axe-core accessibility tests in a docker container against an example URL which is set to `https://www.gov.uk/`.
-
-There are lines commented out in the `.gitlab-ci.yml` file which provide the capability to push the service to Gitlab's container registry once the tests run successfully.
