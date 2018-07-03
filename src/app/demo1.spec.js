@@ -10,7 +10,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = constants.SCRIPT_TIMEOUT;
 
 describe('Accessibility tests with axe', () => {
 
-    beforeEach(function(done) {
+    beforeAll(function(done) {
 
         browser = browserUtil.getBrowser();
         console.info('GOV.UK for demo');
@@ -30,8 +30,8 @@ describe('Accessibility tests with axe', () => {
         //wait for some other element to be present on the page
         browser.wait(until.elementLocated(selenium.By.css(constants.BENEFITS_LINK)))
             .then(function () {
-        //run the axe function passing in the browser as a parameter
-        //see the axeHelper for details of function
+            //run the axe function passing in the browser as a parameter
+            //see the axeHelper for details of function
                 axeHelper.runAxe(browser);
                 done();
             })
@@ -61,7 +61,7 @@ describe('Accessibility tests with axe', () => {
             });
     });
 
-    afterEach(function(done) {
+    afterAll(function(done) {
         //quit the browser after each test
         browser.quit().then(function () {
             done();

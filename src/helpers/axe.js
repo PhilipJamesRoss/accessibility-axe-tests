@@ -4,7 +4,7 @@ const AxeBuilder = require('axe-webdriverjs');
 // uncomment line below for more thorough log
 // var util = require('util');
 function runAxe (driver) {
-    AxeBuilder(driver)
+    return AxeBuilder(driver)
         .analyze(function(results) {
             console.info('Accessibility Violations: ', results.violations.length);
             if (results.violations.length > 0) {
